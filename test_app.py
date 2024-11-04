@@ -112,7 +112,7 @@ def server(input, output, session):
         chords = [input.chord1(), input.chord2(), input.chord3(), input.chord4()]
         curr_chords = '-'.join(val for val in chords if val != 'None')
 
-        # getting count of next chords
+        # getting count of next chords (TODO: немного неправильный запрос, проще через pandas обработать)
         df = run_query(f'''
             WITH next_chords AS (
             SELECT 
